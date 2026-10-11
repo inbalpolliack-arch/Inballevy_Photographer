@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--
+  Inbal Photography – דף נחיתה
+  מבנה הקבצים:
+    index.html        ← התוכן (הטקסטים והתמונות)
+    css/style.css     ← העיצוב (צבעים, גופנים, מרווחים)
+    js/main.js        ← התנהגות (גלריה מתחלפת, הגדלת תמונות)
+    assets/           ← התמונות: gallery-1.jpg, gallery-2.jpg, gallery-3.jpg
+  טיפ: ירידת שורה בטקסט נעשית עם התגית <br>
+-->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbal Photography | צילומי משפחה וזוגות בסילבר קואסט, פורטוגל</title>
+  <meta name="description" content="סשן צילום משפחתי בסילבר קואסט, בעברית ובלי לחץ. תמונות מעובדות כמזכרת מהטיול בפורטוגל. שלוש חבילות לבחירה.">
+  <meta property="og:title" content="Inbal Photography – מזכרת מצולמת מהטיול בפורטוגל">
+  <meta property="og:description" content="סשן צילום משפחתי בסילבר קואסט, בעברית ובחום.">
+  <meta property="og:image" content="assets/gallery-1.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- גופנים: Frank Ruhl Libre לכותרות, Assistant לטקסט -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ 1. פתיחה (Hero) ============ -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="brand">Inbal Photography</p>
+        <h1>בואו נצלם אתכם ביחד, בטיול הזה שלא יחזור.</h1>
+        <p class="lead">צילום רגוע וחם, בלוקיישן שתבחרו באזור הסילבר קואסט.<br>אני דוברת עברית, ואדאג שתרגישו בבית.</p>
+        <a class="btn" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">בואו נדבר בוואטסאפ</a>
+        <p class="small">רק נדבר ונראה מה מתאים לכם.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים" fetchpriority="high">
+      </figure>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 2. הקושי והרצון ============ -->
+    <section class="section tint-sea" id="why">
+      <div class="wrap narrow">
+        <h2>יש לכם אלפי תמונות מהטיול. בכמה מהן כולכם ביחד?</h2>
+        <p>בדרך כלל אחד מצלם, ואחד חסר.<br>הילדים לבד, סלפי מהיר, תמונה מרחוק.<br>הזיכרון נשמר, אבל לא כולכם בו.</p>
+        <p>אני צלמת, ובטלפון שלי יש אלפי תמונות של הילדים שלי.<br>כמעט בכולן אני לא בתמונה.<br>כשאני גוללת אחורה אל התקופה שבה הם היו קטנים, אני מתמוגגת מהמתיקות שלהם, ופתאום מבינה כמה חסרה לי תמונה שבה אנחנו ביחד.</p>
+        <p>הילדים גדלים, והתקופה הזו לא חוזרת.<br>עכשיו אתם בטיול, רחוקים מהמרוץ הרגיל, עם זמן ועם רוגע.<br>זו הזדמנות יפה לעצור רגע ולשמור אותו.</p>
+        <p>ואם את אומרת "אני לא פוטוגנית", או שהוא מעדיף לעמוד בצד, אני מכירה את זה היטב.<br>לא צריך לדעת להצטלם.<br>אני אכוון אתכם בעדינות, ואצלם אתכם כמו שאתם, בלי פוזות.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3. על ההצעה ============ -->
+    <section class="section" id="offer">
+      <div class="wrap">
+        <h2>סשן צילום משפחתי בסילבר קואסט</h2>
+        <p class="section-lead">לזוגות ולמשפחות שמגיעים לטייל בפורטוגל, ורוצים לקחת הביתה מזכרת מצולמת.</p>
+
+        <div class="offer-grid">
+          <div>
+            <h3>איך זה עובד</h3>
+            <!-- כאן יש סדר אמיתי של שלבים, לכן יש מספור -->
+            <ol class="steps">
+              <li><strong>נכיר בזום.</strong><br>נדבר על מה חשוב לכם, מי מגיע ואיך הילדים.<br>(שיחת ההיכרות כלולה בחבילות של שעה וחצי ושעתיים.)</li>
+              <li><strong>נצלם.</strong><br>שעה עד שעתיים, בלוקיישן שתבחרו מתוך כמה מקומות שאני מציעה באזור.</li>
+              <li><strong>תקבלו גלריה.</strong><br>תמונות מעובדות באיכות גבוהה, לשמור ולהדפיס.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>איפה מצלמים</h3>
+            <ul class="places">
+              <li>על הים</li>
+              <li>בפארק</li>
+              <li>ביער</li>
+              <li>בעיר העתיקה של אובידוש</li>
+            </ul>
+            <p>בסוף יהיו לכם תמונות מרגשות שכולכם בהן.<br>כאלה שיהיה כיף להסתכל עליהן גם בעוד שנים רבות.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ חבילות ומחירים ============ -->
+    <!-- כדי לשנות מחיר או פרטים, עורכים את הטקסט בתוך כל חבילה -->
+    <section class="section tint-sea" id="packages">
+      <div class="wrap">
+        <h2>איזו חבילה מתאימה לכם?</h2>
+        <p class="section-lead">שלוש אפשרויות, לפי הזמן שנוח לכם ומספר התמונות שתרצו לקבל.</p>
+        <div class="packages">
+        <article class="package">
+          <h3>שעה</h3>
+          <p class="price">200 €</p>
+          <ul>
+            <li>כשעה של צילום</li>
+            <li>10 תמונות מעובדות</li>
+          </ul>
+          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%94%20%28200%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעה</a>
+        </article>
+        <article class="package">
+          <h3>שעה וחצי</h3>
+          <p class="price">220 €</p>
+          <ul>
+            <li>כשעה וחצי של צילום</li>
+            <li>15 תמונות מעובדות</li>
+            <li>שיחת זום מקדימה</li>
+          </ul>
+          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%94%20%D7%95%D7%97%D7%A6%D7%99%20%28220%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעה וחצי</a>
+        </article>
+        <article class="package">
+          <h3>שעתיים</h3>
+          <p class="price">250 €</p>
+          <ul>
+            <li>כשעתיים של צילום</li>
+            <li>25 תמונות מעובדות</li>
+            <li>שיחת זום מקדימה</li>
+          </ul>
+          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%AA%D7%99%D7%99%D7%9D%20%28250%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעתיים</a>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. עליי ============ -->
+    <section class="section tint-sand" id="about">
+      <div class="wrap narrow">
+        <h2>שלום, אני ענבל</h2>
+        <p>אני צלמת, בוגרת בצלאל, עם ניסיון של יותר מעשור.<br>אני אוהבת צילום, אנשים, ילדים, טבע ובעלי חיים.<br>אני גרה בסילבר קואסט כבר ארבע שנים.</p>
+        <p>חשוב לי שהחוויה תהיה טובה, לא רק התמונות בסוף.<br>אני נעימה, חייכנית ואכפתית, ואמא בעצמי.<br>אעשה הכול כדי שתרגישו אצלי כמו בבית, גם כשאתם רחוקים מהבית.</p>
+      </div>
+    </section>
+
+    <!-- ============ 5. למה זה עובד ============ -->
+    <section class="section" id="benefits">
+      <div class="wrap">
+        <h2>מה תקבלו מזה</h2>
+        <ul class="benefits">
+          <li><h3>כולכם בתמונה</h3><p>גם מי שתמיד מצלם נמצא הפעם בתמונה.</p></li>
+          <li><h3>בעברית, בנחת</h3><p>מדברים בקלות, בלי להסביר את עצמכם בשפה זרה.</p></li>
+          <li><h3>גם אם לא אוהבים להצטלם</h3><p>אני מכוונת בעדינות, ואתם נשארים טבעיים.</p></li>
+          <li><h3>מזכרת שנשארת</h3><p>תמונות מקצועיות לשנים, ולא עוד תיקייה בטלפון.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 6. גלריה מתחלפת ============ -->
+    <section class="section tint-sea" id="gallery">
+      <div class="wrap">
+        <h2>מקומות הצילום</h2>
+        <p class="section-lead">כמה מהמקומות היפים שבהם אפשר לצלם.</p>
+        <!-- התמונות מתחלפות לבד כל כמה שניות. לחיצה על תמונה פותחת אותה בגדול -->
+        <div class="carousel" role="region" aria-label="גלריית תמונות" aria-roledescription="קרוסלה">
+          <div class="stage">
+            <button type="button" class="slide is-active" data-index="0" aria-label="הגדלת תמונה 1">
+              <img class="bg" src="assets/gallery-1.jpg" alt="" aria-hidden="true">
+              <img class="fg" src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים">
+            </button>
+            <button type="button" class="slide" data-index="1" aria-label="הגדלת תמונה 2">
+              <img class="bg" src="assets/gallery-2.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/gallery-2.jpg" alt="חוף רחב בשעת שפל, גלים קטנים והשתקפות השמיים בחול הרטוב, עם צוקים ירוקים ברקע" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="2" aria-label="הגדלת תמונה 3">
+              <img class="bg" src="assets/gallery-3.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/gallery-3.jpg" alt="שביל עץ בין דיונות החול אל המים, עם ערפל קל מעל המפרץ" loading="lazy">
+            </button>
+            <button type="button" class="c-nav c-prev" aria-label="התמונה הקודמת">›</button>
+            <button type="button" class="c-nav c-next" aria-label="התמונה הבאה">‹</button>
+          </div>
+          <div class="dots">
+            <button type="button" class="dot is-active" data-index="0" aria-label="תמונה 1"></button>
+            <button type="button" class="dot" data-index="1" aria-label="תמונה 2"></button>
+            <button type="button" class="dot" data-index="2" aria-label="תמונה 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. המלצות ============ -->
+    <section class="section" id="testimonials">
+      <div class="wrap">
+        <h2>מה אומרים אחרי הצילום</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>אלופה אין עלייך! ❤️<br>תודה רבה על הכל 🫶🏼🫶🏼</p>
+            <cite>דור</cite>
+          </blockquote>
+          <blockquote>
+            <p>הי, רציתי רק לומר שהחוויה הייתה נהדרת, הילדים נהנו להצטלם ואני כמובן בשוק שהם זרמו וזה היה בזכותך! תודה רבה! אין עלייך ❤️🫶🏼🙏🏼</p>
+            <cite>שירלי</cite>
+          </blockquote>
+          <blockquote lang="en" dir="ltr">
+            <p>You were amazing.<br>Thank you so much.</p>
+            <cite>Daisy</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. שאלות נפוצות ============ -->
+    <section class="section tint-sand" id="faq">
+      <div class="wrap narrow">
+        <h2>שאלות נפוצות</h2>
+        <details>
+          <summary>מה אם הילדים לא יזרמו ולא ישתפו פעולה?</summary>
+          <p>התמונות הכי יפות יוצאות עם ילדים לא זורמים.<br>אני לא מצפה מהם לעמוד ולחייך למצלמה.<br>אני מצלמת את מה שקורה באמת.</p>
+        </details>
+        <details>
+          <summary>כמה תמונות מקבלים?</summary>
+          <p>זה תלוי בחבילה.<br>מקבלים 10, 15 או 25 תמונות מעובדות, בגלריה דיגיטלית.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ 9. הזמנה סופית ============ -->
+    <section class="final" id="contact">
+      <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1200 V30 C1000 60 800 0 600 30 C400 60 200 0 0 30 Z"/></svg>
+      <div class="wrap narrow">
+        <h2>בואו נשמור את הרגע הזה</h2>
+        <p>שלחו לי הודעה.<br>ספרו לי מי מגיע ומתי אתם בפורטוגל, ואחזור אליכם בשמחה.</p>
+        <a class="btn btn-light" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">בואו נדבר בוואטסאפ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Inbal Photography · סילבר קואסט, פורטוגל</p>
+  </footer>
+
+  <!-- כפתור וואטסאפ צף, מופיע רק במובייל -->
+  <a class="float-wa" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">וואטסאפ</a>
+
+  <!-- חלון הגדלה לתמונות -->
+  <dialog id="lightbox" aria-label="תצוגה מוגדלת">
+    <button type="button" class="lb-close" aria-label="סגירה">×</button>
+    <button type="button" class="lb-nav lb-prev" aria-label="התמונה הקודמת">›</button>
+    <img id="lb-img" alt="">
+    <button type="button" class="lb-nav lb-next" aria-label="התמונה הבאה">‹</button>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
