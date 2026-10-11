@@ -2,10 +2,11 @@
 <!--
   Inbal Photography – דף נחיתה
   מבנה הקבצים:
-    index.html        ← התוכן (הטקסטים והתמונות)
-    css/style.css     ← העיצוב (צבעים, גופנים, מרווחים)
-    js/main.js        ← התנהגות (גלריה מתחלפת, הגדלת תמונות)
-    assets/           ← התמונות: gallery-1.jpg, gallery-2.jpg, gallery-3.jpg
+    index.html          ← התוכן (הטקסטים והתמונות)
+    css/style.css       ← העיצוב (צבעים, גופנים, מרווחים)
+    js/main.js          ← תפריט, גלריה מתחלפת והגדלת תמונות
+    js/accessibility.js ← כפתור הנגישות
+    assets/             ← כל התמונות
   טיפ: ירידת שורה בטקסט נעשית עם התגית <br>
 -->
 <html lang="he" dir="rtl">
@@ -26,27 +27,101 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip" href="#main">דלגו לתוכן הראשי</a>
+
+  <!-- ============ תפריט עליון ============ -->
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="logo" href="#top">Inbal Photography</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="פתיחת תפריט"><span></span><span></span><span></span></button>
+      <nav id="menu" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="#gallery">מקומות הצילום</a></li>
+          <li><a href="#offer">איך זה עובד</a></li>
+          <li><a href="#packages">חבילות</a></li>
+          <li><a href="#about">עליי</a></li>
+          <li><a href="#faq">שאלות נפוצות</a></li>
+          <li><a class="menu-cta" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">בואו נדבר</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- ============ 1. פתיחה (Hero) ============ -->
-  <header class="hero">
+  <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <p class="brand">Inbal Photography</p>
+        <p class="eyebrow">חוויה חד פעמית של צילום בפורטוגל</p>
         <h1>בואו נצלם אתכם ביחד, בטיול הזה שלא יחזור.</h1>
-        <p class="lead">צילום רגוע וחם, בלוקיישן שתבחרו באזור הסילבר קואסט.<br>אני דוברת עברית, ואדאג שתרגישו בבית.</p>
+        <p class="lead">צילום רגוע וחם, בלוקיישן שתבחרו באזור הסילבר קואסט.<br>אני תושבת האזור, ואדאג שתרגישו בבית.<br>אני מכירה את פינות החמד החבויות שתיירים לא מכירים.</p>
         <a class="btn" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">בואו נדבר בוואטסאפ</a>
         <p class="small">רק נדבר ונראה מה מתאים לכם.</p>
       </div>
       <figure class="hero-photo">
-        <img src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים" fetchpriority="high">
+        <img src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים" width="1200" height="1600" fetchpriority="high">
       </figure>
     </div>
-  </header>
+  </section>
 
-  <main>
+  <main id="main" tabindex="-1">
+
+    <!-- ============ 6. מקומות הצילום – גלריה מתחלפת ============ -->
+    <section class="section tint-sea" id="gallery">
+      <div class="wrap">
+        <h2>מקומות הצילום</h2>
+        <p class="section-lead">אני גרה באזור הכי יפה בפורטוגל: חופי אוקיינוס יפהפיים ועיירה ציורית, עם מבנים שנשתמרו מאז ימי הביניים.<br>בזכות אהבתי הגדולה לטיולים ולצילום, אני מכירה את הפינות הקסומות והחבויות של האזור.<br>הנה כמה מהמקומות שבהם אפשר לצלם.</p>
+        <!-- התמונות מתחלפות לבד, והמסגרת מתאימה את עצמה לגודל כל תמונה. לחיצה פותחת תמונה בגדול -->
+        <div class="carousel" role="region" aria-label="גלריית מקומות הצילום" aria-roledescription="קרוסלה">
+          <div class="stage">
+            <button type="button" class="slide is-active" data-index="0" data-w="1800" data-h="1350" aria-label="הגדלת תמונה 1 מתוך 7">
+              <img class="bg" src="assets/place-obidos.jpg" alt="" aria-hidden="true">
+              <img class="fg" src="assets/place-obidos.jpg" alt="גגות רעפים אדומים ובתים לבנים בעיירה מימי הביניים, עם חומת אבן וטירה ברקע" width="1800" height="1350">
+            </button>
+            <button type="button" class="slide" data-index="1" data-w="1600" data-h="1200" aria-label="הגדלת תמונה 2 מתוך 7" inert>
+              <img class="bg" src="assets/gallery-2.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/gallery-2.jpg" alt="חוף רחב בשעת שפל, גלים קטנים והשתקפות השמיים בחול הרטוב, עם צוקים ירוקים ברקע" width="1600" height="1200" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="2" data-w="1800" data-h="1350" aria-label="הגדלת תמונה 3 מתוך 7" inert>
+              <img class="bg" src="assets/place-park.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/place-park.jpg" alt="אגם שקט בפארק, עם עצים ירוקים והשתקפויות במים וגשר קטן ברקע" width="1800" height="1350" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="3" data-w="1200" data-h="1600" aria-label="הגדלת תמונה 4 מתוך 7" inert>
+              <img class="bg" src="assets/gallery-1.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים" width="1200" height="1600" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="4" data-w="1800" data-h="1350" aria-label="הגדלת תמונה 5 מתוך 7" inert>
+              <img class="bg" src="assets/place-lagoon.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/place-lagoon.jpg" alt="לגונה שקטה בבוקר מעונן, גבעה מיוערת מוארת בהשתקפות במים ושביל עץ לאורך החוף" width="1800" height="1350" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="5" data-w="1600" data-h="1200" aria-label="הגדלת תמונה 6 מתוך 7" inert>
+              <img class="bg" src="assets/gallery-3.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/gallery-3.jpg" alt="שביל עץ בין דיונות החול אל המים, עם ערפל קל מעל המפרץ" width="1600" height="1200" loading="lazy">
+            </button>
+            <button type="button" class="slide" data-index="6" data-w="1800" data-h="1350" aria-label="הגדלת תמונה 7 מתוך 7" inert>
+              <img class="bg" src="assets/place-boardwalk.jpg" alt="" aria-hidden="true" loading="lazy">
+              <img class="fg" src="assets/place-boardwalk.jpg" alt="שביל עץ מתפתל בין דיונות וצמחייה בבוקר ערפילי" width="1800" height="1350" loading="lazy">
+            </button>
+            <button type="button" class="c-nav c-prev" aria-label="התמונה הקודמת">›</button>
+            <button type="button" class="c-nav c-next" aria-label="התמונה הבאה">‹</button>
+          </div>
+          <div class="c-controls">
+            <button type="button" class="c-pause" aria-label="עצירת ההחלפה האוטומטית" aria-pressed="false">❚❚</button>
+            <div class="dots">
+            <button type="button" class="dot is-active" data-index="0" aria-label="תמונה 1"></button>
+            <button type="button" class="dot" data-index="1" aria-label="תמונה 2"></button>
+            <button type="button" class="dot" data-index="2" aria-label="תמונה 3"></button>
+            <button type="button" class="dot" data-index="3" aria-label="תמונה 4"></button>
+            <button type="button" class="dot" data-index="4" aria-label="תמונה 5"></button>
+            <button type="button" class="dot" data-index="5" aria-label="תמונה 6"></button>
+            <button type="button" class="dot" data-index="6" aria-label="תמונה 7"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ 2. הקושי והרצון ============ -->
-    <section class="section tint-sea" id="why">
+    <section class="section" id="why">
       <div class="wrap narrow">
         <h2>יש לכם אלפי תמונות מהטיול. בכמה מהן כולכם ביחד?</h2>
         <p>בדרך כלל אחד מצלם, ואחד חסר.<br>הילדים לבד, סלפי מהיר, תמונה מרחוק.<br>הזיכרון נשמר, אבל לא כולכם בו.</p>
@@ -57,7 +132,7 @@
     </section>
 
     <!-- ============ 3. על ההצעה ============ -->
-    <section class="section" id="offer">
+    <section class="section tint-sand" id="offer">
       <div class="wrap">
         <h2>סשן צילום משפחתי בסילבר קואסט</h2>
         <p class="section-lead">לזוגות ולמשפחות שמגיעים לטייל בפורטוגל, ורוצים לקחת הביתה מזכרת מצולמת.</p>
@@ -100,7 +175,6 @@
             <li>כשעה של צילום</li>
             <li>10 תמונות מעובדות</li>
           </ul>
-          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%94%20%28200%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעה</a>
         </article>
         <article class="package">
           <h3>שעה וחצי</h3>
@@ -110,7 +184,6 @@
             <li>15 תמונות מעובדות</li>
             <li>שיחת זום מקדימה</li>
           </ul>
-          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%94%20%D7%95%D7%97%D7%A6%D7%99%20%28220%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעה וחצי</a>
         </article>
         <article class="package">
           <h3>שעתיים</h3>
@@ -120,25 +193,27 @@
             <li>25 תמונות מעובדות</li>
             <li>שיחת זום מקדימה</li>
           </ul>
-          <a class="btn btn-outline" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%97%D7%91%D7%99%D7%9C%D7%AA%20%D7%94%D7%A9%D7%A2%D7%AA%D7%99%D7%99%D7%9D%20%28250%20%D7%99%D7%95%D7%A8%D7%95%29" target="_blank" rel="noopener">לשאלות על חבילת השעתיים</a>
         </article>
         </div>
+        <p class="packages-cta"><a class="btn" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%AA%D7%90%D7%A8%D7%99%D7%9A%20%D7%9C%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D" target="_blank" rel="noopener">לתיאום תאריך</a></p>
       </div>
     </section>
 
     <!-- ============ 4. עליי ============ -->
     <section class="section tint-sand" id="about">
       <div class="wrap narrow">
-        <h2>שלום, אני ענבל</h2>
-        <p>אני צלמת, בוגרת בצלאל, עם ניסיון של יותר מעשור.<br>אני אוהבת צילום, אנשים, ילדים, טבע ובעלי חיים.<br>אני גרה בסילבר קואסט כבר ארבע שנים.</p>
-        <p>חשוב לי שהחוויה תהיה טובה, לא רק התמונות בסוף.<br>אני נעימה, חייכנית ואכפתית, ואמא בעצמי.<br>אעשה הכול כדי שתרגישו אצלי כמו בבית, גם כשאתם רחוקים מהבית.</p>
+        <div class="about-text">
+          <h2>שלום, אני ענבל</h2>
+          <p>אני צלמת, בוגרת בצלאל, עם ניסיון של יותר מעשור.<br>אני אוהבת צילום, אנשים, ילדים, טבע ובעלי חיים.<br>אני גרה בסילבר קואסט כבר ארבע שנים.</p>
+          <p>חשוב לי שהחוויה תהיה טובה, לא רק התמונות בסוף.<br>אני נעימה, חייכנית ואכפתית, ואמא בעצמי.<br>אעשה הכול כדי שתרגישו אצלי כמו בבית, גם כשאתם רחוקים מהבית.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ============ 5. למה זה עובד ============ -->
+    <!-- ============ 5. המזכרת שלכם ============ -->
     <section class="section" id="benefits">
       <div class="wrap">
-        <h2>מה תקבלו מזה</h2>
+        <h2>המזכרת שלכם מהטיול</h2>
         <ul class="benefits">
           <li><h3>כולכם בתמונה</h3><p>גם מי שתמיד מצלם נמצא הפעם בתמונה.</p></li>
           <li><h3>בעברית, בנחת</h3><p>מדברים בקלות, בלי להסביר את עצמכם בשפה זרה.</p></li>
@@ -148,40 +223,8 @@
       </div>
     </section>
 
-    <!-- ============ 6. גלריה מתחלפת ============ -->
-    <section class="section tint-sea" id="gallery">
-      <div class="wrap">
-        <h2>מקומות הצילום</h2>
-        <p class="section-lead">כמה מהמקומות היפים שבהם אפשר לצלם.</p>
-        <!-- התמונות מתחלפות לבד כל כמה שניות. לחיצה על תמונה פותחת אותה בגדול -->
-        <div class="carousel" role="region" aria-label="גלריית תמונות" aria-roledescription="קרוסלה">
-          <div class="stage">
-            <button type="button" class="slide is-active" data-index="0" aria-label="הגדלת תמונה 1">
-              <img class="bg" src="assets/gallery-1.jpg" alt="" aria-hidden="true">
-              <img class="fg" src="assets/gallery-1.jpg" alt="ילדה בשמלה אדומה וקרדיגן כחול צועדת ברחוב אבנים צר בעיר עתיקה, בין קירות לבנים וגגות רעפים">
-            </button>
-            <button type="button" class="slide" data-index="1" aria-label="הגדלת תמונה 2">
-              <img class="bg" src="assets/gallery-2.jpg" alt="" aria-hidden="true" loading="lazy">
-              <img class="fg" src="assets/gallery-2.jpg" alt="חוף רחב בשעת שפל, גלים קטנים והשתקפות השמיים בחול הרטוב, עם צוקים ירוקים ברקע" loading="lazy">
-            </button>
-            <button type="button" class="slide" data-index="2" aria-label="הגדלת תמונה 3">
-              <img class="bg" src="assets/gallery-3.jpg" alt="" aria-hidden="true" loading="lazy">
-              <img class="fg" src="assets/gallery-3.jpg" alt="שביל עץ בין דיונות החול אל המים, עם ערפל קל מעל המפרץ" loading="lazy">
-            </button>
-            <button type="button" class="c-nav c-prev" aria-label="התמונה הקודמת">›</button>
-            <button type="button" class="c-nav c-next" aria-label="התמונה הבאה">‹</button>
-          </div>
-          <div class="dots">
-            <button type="button" class="dot is-active" data-index="0" aria-label="תמונה 1"></button>
-            <button type="button" class="dot" data-index="1" aria-label="תמונה 2"></button>
-            <button type="button" class="dot" data-index="2" aria-label="תמונה 3"></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ 7. המלצות ============ -->
-    <section class="section" id="testimonials">
+    <section class="section tint-sea" id="testimonials">
       <div class="wrap">
         <h2>מה אומרים אחרי הצילום</h2>
         <div class="quotes">
@@ -221,7 +264,7 @@
       <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1200 V30 C1000 60 800 0 600 30 C400 60 200 0 0 30 Z"/></svg>
       <div class="wrap narrow">
         <h2>בואו נשמור את הרגע הזה</h2>
-        <p>שלחו לי הודעה.<br>ספרו לי מי מגיע ומתי אתם בפורטוגל, ואחזור אליכם בשמחה.</p>
+        <p>זו חוויה חד פעמית, ואני אשמח ללוות אותה.<br>שלחו לי הודעה, ספרו לי מי מגיע ומתי אתם בפורטוגל, ואחזור אליכם בשמחה.</p>
         <a class="btn btn-light" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">בואו נדבר בוואטסאפ</a>
       </div>
     </section>
@@ -231,8 +274,21 @@
     <p>Inbal Photography · סילבר קואסט, פורטוגל</p>
   </footer>
 
-  <!-- כפתור וואטסאפ צף, מופיע רק במובייל -->
-  <a class="float-wa" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener">וואטסאפ</a>
+  <!-- כפתור וואטסאפ דביק, תמיד זמין בפינה -->
+  <a class="float-wa" href="https://wa.me/972524038787?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%A0%D7%91%D7%9C%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%93%D7%A3%20%D7%94%D7%A6%D7%99%D7%9C%D7%95%D7%9E%D7%99%D7%9D%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A1%D7%A9%D7%9F%20%D7%A6%D7%99%D7%9C%D7%95%D7%9D%20%D7%91%D7%A4%D7%95%D7%A8%D7%98%D7%95%D7%92%D7%9C" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path fill="currentColor" d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z"/></svg><span>וואטסאפ</span></a>
+
+  <!-- כפתור נגישות -->
+  <div class="a11y">
+    <button type="button" class="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel" aria-label="תפריט נגישות"><svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3 5.5m3-5.5l3 5.5"/></svg></button>
+    <div id="a11y-panel" role="group" aria-label="אפשרויות נגישות" hidden>
+      <button type="button" data-act="bigger">הגדלת טקסט</button>
+      <button type="button" data-act="smaller">הקטנת טקסט</button>
+      <button type="button" data-act="contrast" aria-pressed="false">ניגודיות גבוהה</button>
+      <button type="button" data-act="links" aria-pressed="false">הדגשת קישורים</button>
+      <button type="button" data-act="motion" aria-pressed="false">עצירת תנועה</button>
+      <button type="button" data-act="reset">איפוס</button>
+    </div>
+  </div>
 
   <!-- חלון הגדלה לתמונות -->
   <dialog id="lightbox" aria-label="תצוגה מוגדלת">
@@ -243,5 +299,6 @@
   </dialog>
 
   <script src="js/main.js"></script>
+  <script src="js/accessibility.js"></script>
 </body>
 </html>
